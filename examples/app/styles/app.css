@@ -1,0 +1,63 @@
+html {
+  height: 100%;
+}
+
+html, body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  font-size: 100%;
+  line-height: 1.5;
+
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* -------- Fruits ------- */
+.fruits {
+  float: left;
+
+  margin: 0 0 1em;
+  padding: 1em 0;
+
+  width: 100%;
+}
+
+.fruits .fruit {
+  float: left;
+
+  padding: 0.5em 1%;
+
+  width: 23%;
+
+  cursor: pointer;
+}
+
+.fruits .fruit:hover {
+  background-color: #f03;
+}
+
+
+/* --------- Basket -------- */
+
+.basket {
+  float: left;
+
+  padding: 2em 0;
+
+  width: 100%;
+
+  border: 2px dashed #72a;
+}

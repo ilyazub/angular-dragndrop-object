@@ -7,11 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="bower_components/angular-dragndrop-object/dist/angular-dragndrop-object.css">
+    <link rel="stylesheet" href="app/styles/app.css">
   </head>
   <body ng-app="example">
     <h1>angular-dragndrop-object</h1>
 
+    <div ng-controller="ExampleCtrl">
+      <ul class="fruits">
+        <li ng-repeat="fruit in fruits" draggable="true" json-data="stringify(fruit)" class="fruit">{{fruit.title}}</li>
+      </ul>
+
+      <div droparea class="basket text-center" drop="addToCart">
+        <span>Drop fruit here</span>
+      </div>
+
+      <ul>
+        <li ng-repeat="item in basket">{{item.title}}</li>
+      </ul>
+    </div>
+
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular-dragndrop-object/dist/angular-dragndrop-object.js"></script>
 
     <script src="app/scripts/app.js"></script>

@@ -6,7 +6,10 @@
   ],
   "description": "Angular.js drag'n'drop directive for JavaScript objects",
   "homepage": "https://github.com/ilyazub/angular-dragndrop-object.git",
-  "main": [ "dist/dragndrop-object.js", "dist/dragndrop-object.css" ],
+  "main": [
+    "dist/dragndrop-object.js",
+    "dist/dragndrop-object.css"
+  ],
   "keywords": [
     "angular",
     "angular.js",
@@ -24,6 +27,7 @@
     "examples"
   ],
   "dependencies": {
-    "angular": "~1.2.25"
+    "angular": "~1.2.25",
+    "jquery": "~2.1.1"
   }
 }
