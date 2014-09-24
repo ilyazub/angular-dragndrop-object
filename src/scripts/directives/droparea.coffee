@@ -46,6 +46,7 @@ angular.module('ilyazub.dragndrop-object')
       element.on('dragenter', handleDragEnter)
       element.on('dragleave', handleDragLeave)
       element.on('dragover', handleDragOver)
-    controller: ($scope) ->
+    controller: [ '$scope', ($scope) ->
       $scope.transferredDataType ||= 'json'
+    ]
   )

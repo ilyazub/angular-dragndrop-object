@@ -23,6 +23,20 @@ module.exports = function (grunt) {
       }
     },
 
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= dragNDrop.dist %>/{,*/}*',
+            '!<%= dragNDrop.dist %>/.git*'
+          ]
+        }]
+      },
+      server: '.tmp'
+    },
+
     coffee: {
       options: {
         sourceMap: true,
@@ -56,50 +70,6 @@ module.exports = function (grunt) {
         options: {
           debugInfo: true
         }
-      }
-    },
-
-    clean: {
-      dist: {
-        files: [{
-          dot: true,
-          src: [
-            '.tmp',
-            '<%= dragNDrop.dist %>/{,*/}*',
-            '!<%= dragNDrop.dist %>/.git*'
-          ]
-        }]
-      },
-      server: '.tmp'
-    },
-
-    copy: {
-      dist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= dragNDrop.app %>',
-          dest: '<%= dragNDrop.dist %>',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            '*.html',
-            'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
-            'fonts/*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: '<%= dragNDrop.dist %>/images',
-          src: ['generated/*']
-        }]
-      },
-      styles: {
-        expand: true,
-        cwd: '<%= dragNDrop.app %>/stylesheets',
-        dest: '.tmp/stylesheets/',
-        src: '{,*/}*.css'
       }
     },
 
@@ -142,6 +112,36 @@ module.exports = function (grunt) {
       }
     },
 
+    ngAnnotate: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/concat/scripts',
+          src: ['*.js', '!oldieshim.js'],
+          dest: '.tmp/concat/scripts'
+        }]
+      }
+    },
+
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= dragNDrop.app %>',
+          dest: '<%= dragNDrop.dist %>',
+          src: [
+          ]
+        }]
+      },
+      styles: {
+        expand: true,
+        cwd: '<%= dragNDrop.app %>/stylesheets',
+        dest: '.tmp/stylesheets/',
+        src: '{,*/}*.css'
+      }
+    },
+
     cssmin: {
       dist: {
         files: {
@@ -168,6 +168,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
+    'ngAnnotate',
     'copy:dist',
     'cssmin',
     'uglify',
