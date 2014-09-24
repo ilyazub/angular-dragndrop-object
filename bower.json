@@ -1,14 +1,14 @@
 {
   "name": "angular-dragndrop-object",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "authors": [
     "Illia Zub <zaoooza92@gmail.com>"
   ],
   "description": "Angular.js drag'n'drop directive for JavaScript objects",
   "homepage": "https://github.com/ilyazub/angular-dragndrop-object.git",
   "main": [
-    "dist/dragndrop-object.js",
-    "dist/dragndrop-object.css"
+    "dist/angular-dragndrop-object.js",
+    "dist/angular-dragndrop-object.css"
   ],
   "keywords": [
     "angular",
