@@ -1,0 +1,27 @@
+{
+  "name": "angular-dragndrop-object",
+  "version": "0.0.0",
+  "authors": [
+    "Illia Zub <zaoooza92@gmail.com>"
+  ],
+  "description": "Angular.js drag'n'drop directive for JavaScript objects",
+  "main": [ "dist/dragndrop-object.js", "dist/dragndrop-object.css" ],
+  "keywords": [
+    "angular",
+    "angular.js",
+    "drag-n-drop",
+    "drag'n'drop",
+    "dnd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.25"
+  }
+}
