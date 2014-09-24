@@ -11,6 +11,24 @@ module.exports = function (grunt) {
   grunt.initConfig({
     dragNDrop: appConfig,
 
+     watch: {
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
+      },
+      coffee: {
+        files: ['<%= dragNDrop.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
+        tasks: ['newer:coffee:dist', 'concat', 'ngAnnotate', 'copy:dist', 'uglify']
+      },
+      compass: {
+        files: ['<%= dragNDrop.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['compass:server', 'autoprefixer', 'concat', 'copy:dist', 'cssmin']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      }
+    },
+
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -116,9 +134,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: ['*.js', '!oldieshim.js'],
-          dest: '.tmp/concat/scripts'
+          cwd: '.tmp/scripts',
+          src: ['*.js'],
+          dest: '.tmp/scripts'
         }]
       }
     },
@@ -171,7 +189,7 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'copy:dist',
     'cssmin',
-    'uglify',
+    'uglify'
   ]);
 
   grunt.registerTask('default', [

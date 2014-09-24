@@ -8,12 +8,14 @@ angular
   .module('example')
   .controller('ExampleCtrl', function ($scope) {
     $scope.stringify = function (obj) {
-      JSON.stringify(obj);
+      return JSON.stringify(obj);
     };
 
     $scope.addToCart = function (fruit) {
       $scope.basket.push(fruit);
     }
+
+    $scope.basket = []
 
     $scope.fruits = [
       {

@@ -10,35 +10,40 @@ angular.module('ilyazub.dragndrop-object')
   .directive('droparea', ->
     restrict: 'EA'
     scope:
-      drop: '&'
-      transferredDataType: '@'
+      handleDrop: '&drop'
+      highlightClass: '@'
     link: ($scope, element, attrs) ->
       handleDrop = (e) ->
         element.removeClass('highlight')
 
         $scope.$apply(
           (scope) ->
-            fn = scope.drop()
+            if typeof scope.handleDrop is 'function'
+              handleDrop = scope.handleDrop()
 
-            json = JSON.parse(e.originalEvent.dataTransfer.getData($scope.transferredDataType))
+              dataTransfer = e.dataTransfer || e.originalEvent.dataTransfer
 
-            fn(json) if fn?
+              dataType = dataTransfer.getData('dataType')
+              obj = JSON.parse(dataTransfer.getData(dataType))
+
+              handleDrop(obj)
         )
 
         e.preventDefault()
 
       handleDragEnter = (e) ->
-        element.addClass('highlight')
+        element.addClass($scope.highlightClass)
 
         e.preventDefault()
 
       handleDragLeave = (e) ->
-        element.removeClass('highlight')
+        element.removeClass($scope.highlightClass)
 
         e.preventDefault()
 
       handleDragOver = (e) ->
-        e.originalEvent.dataTransfer.dropEffect = 'copy'
+        dataTransfer = e.dataTransfer || e.originalEvent.dataTransfer
+        dataTransfer.dropEffect = 'copy'
 
         e.preventDefault()
 
@@ -46,7 +51,4 @@ angular.module('ilyazub.dragndrop-object')
       element.on('dragenter', handleDragEnter)
       element.on('dragleave', handleDragLeave)
       element.on('dragover', handleDragOver)
-    controller: [ '$scope', ($scope) ->
-      $scope.transferredDataType ||= 'json'
-    ]
   )

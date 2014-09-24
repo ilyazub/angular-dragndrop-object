@@ -25,7 +25,9 @@ li {
   text-align: center;
 }
 
+
 /* -------- Fruits ------- */
+
 .fruits {
   float: left;
 
@@ -52,12 +54,19 @@ li {
 
 /* --------- Basket -------- */
 
-.basket {
+.droparea, .basket {
   float: left;
 
+  margin-bottom: 2em;
   padding: 2em 0;
 
   width: 100%;
+}
 
+.droparea {
   border: 2px dashed #72a;
+}
+
+.droparea.highlight {
+  border-style: solid;
 }
