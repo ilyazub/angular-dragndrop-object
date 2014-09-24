@@ -1,6 +1,6 @@
 {
   "name": "angular-dragndrop-object",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Angular.js drag'n'drop directive for JavaScript objects",
   "homepage": "https://github.com/ilyazub/angular-dragndrop-object.git",
   "main": "Gruntfile.js",
