@@ -14,7 +14,11 @@
 
     <div ng-controller="ExampleCtrl">
       <ul class="fruits">
-        <li ng-repeat="fruit in fruits" draggable="true" json-data="stringify(fruit)" transferred-data-type="object" ng-model="fruit" class="fruit text-center">{{fruit.title}}</li>
+        <li ng-repeat="fruit in fruits" draggable="true" json-data="stringify(fruit)" class="fruit text-center">{{fruit.title}}</li>
+      </ul>
+
+      <ul class="inventions">
+        <li ng-repeat="invention in inventions" draggable="true" ng-model="invention" class="invention text-center">{{invention.title}}</li>
       </ul>
 
       <div droparea class="droparea text-center" drop="addToCart" highlight-class="highlight">

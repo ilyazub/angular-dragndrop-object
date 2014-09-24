@@ -8,30 +8,26 @@
 ###
 angular.module('ilyazub.dragndrop-object')
   .directive('draggable', ->
-    require: 'ngModel'
+    require: '?ngModel'
     restrict: 'EA'
     scope:
-      jsonData: '='
-      ngModel: '='
-      transferredDataType: '@'
+      jsonData: '=?'
+      ngModel: '=?'
     link: ($scope, element, attrs) ->
       handleDragStart = (e) ->
         dataTransfer = e.dataTransfer || e.originalEvent.dataTransfer
 
         dataTransfer.effectAllowed = 'copy'
 
-        dataTransfer.setData('dataType', $scope.transferredDataType)
+        if $scope.jsonData?
+          dataTransfer.setData('dataType', 'json')
 
-        switch $scope.transferredDataType
-          when 'json'
-            dataTransfer.setData($scope.transferredDataType, $scope.jsonData)
-          when 'object'
-            json = JSON.stringify($scope.ngModel)
-            dataTransfer.setData($scope.transferredDataType, json)
+          dataTransfer.setData('json', $scope.jsonData)
+        else if $scope.ngModel?
+          dataTransfer.setData('dataType', 'object')
+
+          obj = JSON.stringify($scope.ngModel)
+          dataTransfer.setData('object', obj)
 
       element.on('dragstart', handleDragStart)
-
-    controller: [ '$scope', 'defaultTransferredDataType', ($scope, transferredDataType) ->
-      $scope.transferredDataType ||= transferredDataType
-    ]
   )

@@ -28,7 +28,7 @@ li {
 
 /* -------- Fruits ------- */
 
-.fruits {
+.fruits, .inventions {
   float: left;
 
   margin: 0 0 1em;
@@ -37,7 +37,8 @@ li {
   width: 100%;
 }
 
-.fruits .fruit {
+.fruits .fruit,
+.inventions .invention {
   float: left;
 
   padding: 0.5em 1%;
@@ -47,7 +48,8 @@ li {
   cursor: pointer;
 }
 
-.fruits .fruit:hover {
+.fruits .fruit:hover,
+.inventions .invention:hover {
   background-color: #f03;
 }
 

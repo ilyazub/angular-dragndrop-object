@@ -35,4 +35,23 @@ angular
         title: 'Serviceberry'
       }
     ]
+
+    $scope.inventions = [
+      {
+        id: 1,
+        title: 'Light bulb'
+      },
+      {
+        id: 2,
+        title: 'Hammer'
+      },
+      {
+        id: 3,
+        title: 'Pen'
+      },
+      {
+        id: 4,
+        title: 'Wheel'
+      }
+    ]
   });

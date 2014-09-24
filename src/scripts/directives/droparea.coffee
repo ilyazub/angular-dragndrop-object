@@ -10,8 +10,8 @@ angular.module('ilyazub.dragndrop-object')
   .directive('droparea', ->
     restrict: 'EA'
     scope:
-      handleDrop: '&drop'
-      highlightClass: '@'
+      handleDrop: '&?drop'
+      highlightClass: '@?'
     link: ($scope, element, attrs) ->
       handleDrop = (e) ->
         element.removeClass('highlight')
