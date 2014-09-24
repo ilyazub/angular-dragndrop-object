@@ -135,7 +135,7 @@ module.exports = function (grunt) {
     concat: {
       dist: {
         files: {
-          '<%= dragNDrop.dist %>/dragndrop-object.js': [
+          '<%= dragNDrop.dist %>/angular-dragndrop-object.js': [
             '.tmp/scripts/{,*/}*.js'
           ]
         }
@@ -145,7 +145,7 @@ module.exports = function (grunt) {
     cssmin: {
       dist: {
         files: {
-          '<%= dragNDrop.dist %>/dragndrop-object.css': [
+          '<%= dragNDrop.dist %>/angular-dragndrop-object.css': [
             '.tmp/styles/{,*/}*.css'
           ]
         }
@@ -155,8 +155,8 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= dragNDrop.dist %>/dragndrop-object.js': [
-            '<%= dragNDrop.dist %>/dragndrop-object.js'
+          '<%= dragNDrop.dist %>/angular-dragndrop-object.js': [
+            '<%= dragNDrop.dist %>/angular-dragndrop-object.js'
           ]
         }
       }
