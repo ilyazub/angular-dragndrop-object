@@ -2,6 +2,7 @@
   "name": "angular-dragndrop-object",
   "version": "1.0.0",
   "description": "Angular.js drag'n'drop directive for JavaScript objects",
+  "homepage": "https://github.com/ilyazub/angular-dragndrop-object.git",
   "main": "Gruntfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -29,5 +30,5 @@
     "drag'n'drop"
   ],
   "author": "Illia Zub <zaoooza92@gmail.com>",
-  "license": "MIT"
+  "license": "WTFPL"
 }

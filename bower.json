@@ -5,6 +5,7 @@
     "Illia Zub <zaoooza92@gmail.com>"
   ],
   "description": "Angular.js drag'n'drop directive for JavaScript objects",
+  "homepage": "https://github.com/ilyazub/angular-dragndrop-object.git",
   "main": [ "dist/dragndrop-object.js", "dist/dragndrop-object.css" ],
   "keywords": [
     "angular",
@@ -13,7 +14,7 @@
     "drag'n'drop",
     "dnd"
   ],
-  "license": "MIT",
+  "license": "WTFPL",
   "ignore": [
     "**/.*",
     "node_modules",
