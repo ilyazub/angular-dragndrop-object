@@ -25,6 +25,14 @@ li {
   text-align: center;
 }
 
+/* -------- Main ------- */
+
+.main {
+  float: left;
+
+  width: 100%;
+}
+
 
 /* -------- Fruits ------- */
 
@@ -71,4 +79,9 @@ li {
 
 .droparea.highlight {
   border-style: solid;
+}
+
+.basket {
+  margin: 1em 0 0 0;
+  padding: 0;
 }

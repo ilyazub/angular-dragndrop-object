@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>angular-dragndrop-object</title>
-    <meta name="description" content="Angular.js drag'n'drop directive for JavaScript objects">
+    <meta name="description" content="Angular.js drag'n'drop directive for JavaScript objects and JSON">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../dist/angular-dragndrop-object.css">
@@ -12,9 +12,9 @@
   <body ng-app="example">
     <h1>angular-dragndrop-object</h1>
 
-    <div ng-controller="ExampleCtrl">
+    <div ng-controller="ExampleCtrl" class="main">
       <ul class="fruits">
-        <li ng-repeat="fruit in fruits" draggable="true" json-data="stringify(fruit)" class="fruit text-center">{{fruit.title}}</li>
+        <li ng-repeat="fruit in fruits" draggable="true" json-data="fruit | json" class="fruit text-center">{{fruit.title}}</li>
       </ul>
 
       <ul class="inventions">
@@ -22,10 +22,10 @@
       </ul>
 
       <div droparea class="droparea text-center" drop="addToCart" highlight-class="highlight">
-        <span>Drop fruit here</span>
+        <span>Drop something here</span>
       </div>
 
-      <div ng-show="basket.length">
+      <div class="left" ng-show="basket.length">
         <strong>Корзинка</strong>
         <ul class="basket">
           <li ng-repeat="item in basket">{{item.title}}</li>
